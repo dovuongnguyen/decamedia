@@ -1,0 +1,1 @@
+angular.module('decamedia',['angular-meteor', 'ui.router']);

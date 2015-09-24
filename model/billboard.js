@@ -1,0 +1,1 @@
+Billboards = new Mongo.Collection("billboards");
