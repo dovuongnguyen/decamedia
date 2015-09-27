@@ -1,1 +1,1 @@
-angular.module('decamedia',['angular-meteor', 'ui.router']);
+angular.module('decamedia',['angular-meteor', 'ui.router','ngSanitize']);
