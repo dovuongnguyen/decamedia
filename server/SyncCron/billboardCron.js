@@ -28,7 +28,6 @@ SyncedCron.add({
                               );
             arrayId.push(result.data[i].Id);
           };
-          debugger;
           var query = { Id: { $nin: arrayId } };
           Billboards.remove(query);
         });
