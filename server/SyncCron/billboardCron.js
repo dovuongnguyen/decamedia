@@ -23,20 +23,18 @@ SyncedCron.add({
           for (var i = result.data.length - 1; i >= 0; i--) {
             Billboards.insert(result.data[i]);
           };
-        }else{
+        }
+        else{
           for (var i = result.data.length - 1; i >= 0; i--) {
-            var exist = Billboards.find({id : result.data[i].Id});
-            if(exist){
-              Billboards.update(
+            Billboards.update(
                                  { Id: result.data[i].Id },
                                  result.data[i],
                                  { upsert: true }
                               );
-            }else{
-              Billboards.insert(result.data[i]);
-            }
+
             
           };
+          Billboards.remove("B6Hau67BYgyhyHzsB");
         }
         });
     }
