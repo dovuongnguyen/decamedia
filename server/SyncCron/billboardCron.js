@@ -19,23 +19,18 @@ SyncedCron.add({
         "http://twin.vn/DecaMedia/api/devicebillboard/20150925_bc53f90b7da34605b259dbbab285d9a9"
         ,function(error, result){
           //console.log(result.data);
-        if (Billboards.find().count() === 0) {
-          for (var i = result.data.length - 1; i >= 0; i--) {
-            Billboards.insert(result.data[i]);
-          };
-        }
-        else{
+          var arrayId = [];
           for (var i = result.data.length - 1; i >= 0; i--) {
             Billboards.update(
                                  { Id: result.data[i].Id },
                                  result.data[i],
                                  { upsert: true }
                               );
-
-            
+            arrayId.push(result.data[i].Id);
           };
-          Billboards.remove("B6Hau67BYgyhyHzsB");
-        }
+          debugger;
+          var query = { Id: { $nin: arrayId } };
+          Billboards.remove(query);
         });
     }
   });
