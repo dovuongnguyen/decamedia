@@ -22,6 +22,7 @@ ddp-common@1.2.1
 ddp-server@1.2.1
 deps@1.0.9
 diff-sequence@1.0.1
+dovuongnguyen:revolution@0.0.3
 ecmascript@0.1.4
 ecmascript-collections@0.1.6
 ejson@1.0.7
@@ -67,6 +68,7 @@ templating-tools@1.0.0
 tracker@1.0.8
 ui@1.0.8
 underscore@1.0.4
+urigo:angular-blaze-template@0.0.1
 url@1.0.5
 webapp@1.2.2
 webapp-hashing@1.0.5

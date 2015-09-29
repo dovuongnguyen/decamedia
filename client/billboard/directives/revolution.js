@@ -1,6 +1,6 @@
 angular.module("decamedia").directive('revolutionSlider', function() {
     return {
-        template: "<ul><li ng-repeat='billboard in billboards' data-ng-bind-html='billboard.Content | to_trusted' class='revolution-mch-1' data-transition='fade' data-masterspeed='1000' data-title='Slide 1'></li></ul>",
+        template: "<ul><li ng-repeat='billboard in billboards' data-ng-bind-html='billboard.Content | to_trusted' class='revolution-mch-1' data-transition='{{billboard.Transition}}' data-masterspeed='{{data.Speed}}' data-title='Slide 1'></li></ul>",
         restrict: 'A',
         link: function(scope, element, attrs) {
         var RevolutionSlider = function () {
@@ -25,10 +25,12 @@ angular.module("decamedia").directive('revolutionSlider', function() {
                 //Revolution Slider - Full Screen Offset Container
                 initRSfullScreenOffset: function () {
                     var revapi;
-                    jQuery(document).ready(function() {
+                    var tpj=jQuery;
+                    tpj.noConflict();
+                    tpj(document).ready(function() {
                        revapi = element.revolution(
                         {
-                            delay:9000,
+                            delay:3000,
                             startwidth:1170,
                             startheight:500,
                             hideThumbs:10,
@@ -44,7 +46,7 @@ angular.module("decamedia").directive('revolutionSlider', function() {
 
             };
         }();     
-        setTimeout(function(){RevolutionSlider.initRSfullScreenOffset();},500);
+        setTimeout(function(){RevolutionSlider.initRSfullScreenOffset();},4000);
             
         }
     }
