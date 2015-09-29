@@ -1,6 +1,6 @@
 angular.module("decamedia").directive('revolutionSlider', function() {
     return {
-        template: "<ul><li ng-repeat='billboard in billboards' ng-bind-html='billboard.Content' class='revolution-mch-1' data-transition='fade' data-masterspeed='1000' data-title='Slide 1'></li></ul>",
+        template: "<ul><li ng-repeat='billboard in billboards' data-ng-bind-html='billboard.Content | to_trusted' class='revolution-mch-1' data-transition='fade' data-masterspeed='1000' data-title='Slide 1'></li></ul>",
         restrict: 'A',
         link: function(scope, element, attrs) {
         var RevolutionSlider = function () {
@@ -13,7 +13,7 @@ angular.module("decamedia").directive('revolutionSlider', function() {
                     jQuery(document).ready(function() {
                         revapi = element.revolution(
                         {
-                            delay:9000,
+                            delay:3000,
                             startwidth:1170,
                             startheight:600 ,
                             hideThumbs:10,
@@ -28,7 +28,7 @@ angular.module("decamedia").directive('revolutionSlider', function() {
                     jQuery(document).ready(function() {
                        revapi = element.revolution(
                         {
-                            delay:4000,
+                            delay:9000,
                             startwidth:1170,
                             startheight:500,
                             hideThumbs:10,
